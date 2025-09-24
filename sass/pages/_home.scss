@@ -1,0 +1,232 @@
+#home_page {
+  .banner-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-light;
+    height: calc(100vh - #{$header-desktop-height});
+    margin-bottom: 50px;
+
+    .banner-content-container {
+      align-items: center;
+
+      .banner-text {
+        margin-bottom: 40px;
+        .banner-title {
+          color: $primary;
+          font-weight: 700;
+          font-size: 75px;
+          margin-bottom: 30px;
+        }
+        .banner-description {
+          font-size: 22px;
+          font-weight: 400;
+          color: $dark-grey;
+        }
+      }
+
+      .img-container {
+        width: 100%;
+        height: 440px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 10px;
+        }
+
+        .overlay {
+          position: absolute;
+          padding: 30px;
+          background-color: $white;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          z-index: 10;
+          bottom: -60px;
+          left: -120px;
+
+          svg {
+            color: $black;
+            margin-right: 20px;
+            width: 24px;
+            height: 24px;
+          }
+
+          .overlay-text {
+            span {
+              &:nth-child(1) {
+                color: $primary;
+                font-weight: 700;
+                font-size: 24px;
+              }
+              &:nth-child(2) {
+                color: $dark-grey;
+                font-weight: 400;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .services-section {
+    margin-bottom: 50px;
+
+    .section-header {
+      margin-bottom: 50px;
+      text-align: center;
+
+      .section-title {
+        color: $primary;
+        font-weight: 700;
+        font-size: 48px;
+      }
+
+      .section-subtitle {
+        color: $dark-grey;
+        font-weight: 400;
+        font-size: 22px;
+      }
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+
+  .about-section {
+    background-color: $secondary-light;
+    padding: 50px 0;
+
+    .section-content {
+      .section-title {
+        color: $primary;
+        font-weight: 700;
+        font-size: 48px;
+        margin-bottom: 30px;
+      }
+
+      .list-points {
+        .item {
+          display: grid;
+          grid-template-columns: auto auto;
+          align-items: start;
+
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+
+          .icon-container {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: $primary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+
+            svg {
+              color: $white;
+              width: 24px;
+              height: 24px;
+            }
+          }
+
+          .text-container {
+            .title {
+              color: $primary;
+              font-weight: 600;
+              font-size: 22px;
+            }
+            .description {
+              color: $dark-grey;
+              font-weight: 400;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-md {
+  #home_page {
+    .banner-section {
+      height: calc(100vh - #{$header-mobile-height});
+      margin-bottom: 30px;
+
+      .banner-content-container {
+        .banner-text {
+          .banner-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+          }
+          .banner-description {
+            font-size: 18px;
+          }
+        }
+
+        .img-container {
+          height: 260px;
+
+          .overlay {
+            padding: 20px;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            svg {
+              margin-right: 12px;
+              width: 24px;
+              height: 24px;
+            }
+
+            .overlay-text {
+              span {
+                &:nth-child(1) {
+                  font-size: 16px;
+                }
+                &:nth-child(2) {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .services-section {
+      margin-bottom: 30px;
+
+      .section-header {
+        margin-bottom: 30px;
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        .section-subtitle {
+          font-size: 18px;
+        }
+      }
+
+      .services-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

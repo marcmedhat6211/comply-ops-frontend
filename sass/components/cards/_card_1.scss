@@ -1,0 +1,38 @@
+.card-1 {
+  padding: 40px;
+  border: 1px solid $secondary;
+  border-radius: 6px;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: $primary;
+    margin-bottom: 30px;
+  }
+
+  .card-title {
+    color: $primary;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .card-subtitle {
+    color: $dark-grey;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  ul.card-list {
+    li {
+      color: $dark-grey;
+      font-weight: 400;
+      font-size: 16px;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
