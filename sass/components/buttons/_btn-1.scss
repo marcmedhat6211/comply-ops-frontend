@@ -1,0 +1,50 @@
+.btn-1 {
+  display: block;
+  text-decoration: none;
+  padding: 10px 30px;
+  background-color: $primary;
+  color: $white;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  font-size: 16px;
+
+  &:hover {
+    background-color: transparent;
+    color: $primary;
+    border-color: $primary;
+  }
+
+  &.light {
+    background-color: $white;
+    color: $primary;
+    border-color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $primary;
+      border-color: $white;
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    color: $primary;
+    border-color: $primary;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+      border-color: $primary;
+    }
+  }
+}
+
+@include media-breakpoint-md {
+  .btn-1 {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}

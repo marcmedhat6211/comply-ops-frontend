@@ -1,0 +1,26 @@
+@mixin logoMixin($text-color) {
+  display: block;
+  width: 200px;
+  height: 75px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// @include media-breakpoint-md {
+//   .img-container {
+//     margin-right: 10px;
+//   }
+
+//   .text-container {
+//     h6 {
+//       font-size: 18px;
+//     }
+//     p {
+//       font-size: 14px;
+//     }
+//   }
+// }
