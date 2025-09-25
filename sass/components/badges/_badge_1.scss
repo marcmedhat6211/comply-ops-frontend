@@ -1,0 +1,16 @@
+.badge-1 {
+  padding: 8px 24px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-weight: 500;
+
+  &.primary {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &.secondary {
+    background-color: $secondary-light;
+    color: $primary;
+  }
+}

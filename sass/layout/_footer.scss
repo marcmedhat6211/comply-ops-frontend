@@ -1,6 +1,6 @@
 footer {
   background-color: $primary;
-  padding: 50px 30px 30px;
+  padding: 50px 70px 30px;
   width: 100%;
 
   .footer-paragraph {
@@ -37,13 +37,8 @@ footer {
   }
 
   .logo-container {
-    @include logoMixin($text-color: $white);
+    @include logoMixin();
     margin-bottom: 40px;
-  }
-
-  .mid-col {
-    display: flex;
-    justify-content: center;
   }
 
   .col-title {
@@ -96,12 +91,6 @@ footer {
       align-items: center;
     }
 
-    .mid-col {
-      justify-content: start;
-      align-items: start;
-      margin-bottom: 40px;
-    }
-
     .col-title {
       font-size: 16px;
       margin-bottom: 12px;
@@ -112,6 +101,12 @@ footer {
 
       &:not(:last-child) {
         margin-bottom: 2px;
+      }
+    }
+
+    .footer-col {
+      &:not(:last-child) {
+        margin-bottom: 30px;
       }
     }
   }

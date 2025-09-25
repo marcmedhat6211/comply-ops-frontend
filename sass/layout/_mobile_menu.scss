@@ -35,15 +35,8 @@
 
   .menu-content {
     .mobile-menu-logo {
-      text-decoration: none;
-      width: 140px;
-      height: 70px;
-      margin-bottom: 20px;
-      display: block;
-
-      img {
-        object-fit: contain;
-      }
+      @include logoMixin();
+      margin-bottom: 40px;
     }
 
     .mobile-menu-links {
