@@ -32,6 +32,102 @@
     margin-bottom: 80px;
   }
 
+  .about-company-section {
+    padding: 80px 0;
+    background: $white;
+
+    .about-content {
+      max-width: 100%;
+      margin: 0 auto;
+
+      .section-title {
+        font-size: 42px;
+        font-weight: 700;
+        color: $primary;
+        text-align: center;
+        margin-bottom: 30px;
+        line-height: 1.2;
+      }
+
+      .section-description {
+        font-size: 18px;
+        font-weight: 400;
+        color: $dark-grey;
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 60px;
+        max-width: 100%;
+        padding: 0 10%;
+      }
+
+      .about-features {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .feature-item {
+          text-align: center;
+          padding: 30px 20px;
+          transition: transform 0.3s ease-in-out;
+          flex: 1;
+          min-width: 280px;
+          max-width: 350px;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+
+          .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(
+              135deg,
+              rgba(42, 92, 121, 0.1),
+              rgba(42, 92, 121, 0.05)
+            );
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease-in-out;
+
+            svg {
+              width: 40px;
+              height: 40px;
+              color: $primary;
+            }
+          }
+
+          &:hover .feature-icon {
+            background: linear-gradient(
+              135deg,
+              rgba(42, 92, 121, 0.15),
+              rgba(42, 92, 121, 0.08)
+            );
+            transform: scale(1.05);
+          }
+
+          h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: $primary;
+            margin-bottom: 15px;
+          }
+
+          p {
+            font-size: 15px;
+            font-weight: 400;
+            color: $dark-grey;
+            line-height: 1.6;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
   .banner-section {
     padding: 100px 0;
     background-color: $secondary-light;
@@ -104,12 +200,10 @@
 @include media-breakpoint-md {
   #team_page {
     .hero-section {
-      padding: 80px 20px;
-      margin-bottom: 40px;
+      padding: 80px 20px 60px;
 
       .page-title {
         font-size: 36px;
-        margin-bottom: 20px;
       }
 
       .page-subtitle {
@@ -117,10 +211,57 @@
       }
     }
 
+    .about-company-section {
+      padding: 60px 20px;
+
+      .about-content {
+        .section-title {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+
+        .section-description {
+          font-size: 16px;
+          margin-bottom: 40px;
+          padding: 0;
+        }
+
+        .about-features {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+
+          .feature-item {
+            padding: 20px 10px;
+            min-width: 100%;
+            max-width: 100%;
+
+            .feature-icon {
+              width: 70px;
+              height: 70px;
+
+              svg {
+                width: 35px;
+                height: 35px;
+              }
+            }
+
+            h3 {
+              font-size: 20px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
     .team-section {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 24px;
-      margin-bottom: 40px;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
     }
 
     .banner-section {

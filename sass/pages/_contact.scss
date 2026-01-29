@@ -26,15 +26,24 @@
   .contact-section {
     padding: 80px 50px;
 
+    .row {
+      align-items: stretch;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      height: 100%;
+    }
+
     .form-card {
       background: $white;
       padding: 40px;
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       border: 1px solid rgba(42, 92, 121, 0.1);
-      margin-bottom: 30px;
-      position: sticky;
-      top: 100px;
+      height: 100%;
 
       .form-title {
         font-size: 24px;
@@ -44,7 +53,7 @@
       }
 
       .form-group {
-        margin-bottom: 24px;
+        margin-bottom: 42px;
 
         label {
           display: block;
@@ -152,7 +161,6 @@
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       border: 1px solid rgba(42, 92, 121, 0.1);
-      margin-bottom: 30px;
 
       .info-title {
         font-size: 22px;
@@ -251,7 +259,6 @@
       padding: 32px;
       border-radius: 16px;
       border: 1px solid rgba(42, 92, 121, 0.15);
-      margin-bottom: 30px;
 
       .features-title {
         font-size: 20px;
@@ -294,29 +301,13 @@
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       border: 1px solid rgba(42, 92, 121, 0.1);
+      height: 380px;
 
       .consultation-img {
         width: 100%;
-        height: 500px;
+        height: 100%;
         object-fit: cover;
-      }
-
-      .consultation-content {
-        padding: 24px;
-
-        h4 {
-          font-size: 18px;
-          font-weight: 600;
-          color: $primary;
-          margin-bottom: 12px;
-        }
-
-        p {
-          font-size: 14px;
-          color: $dark-grey;
-          line-height: 1.6;
-          margin-bottom: 0;
-        }
+        object-position: top;
       }
     }
   }
@@ -346,6 +337,17 @@
       .info-card,
       .features-card {
         padding: 24px;
+      }
+
+      .right-column {
+        gap: 20px;
+      }
+
+      .consultation-card {
+        min-height: 250px;
+        img {
+          object-position: left !important;
+        }
       }
     }
   }

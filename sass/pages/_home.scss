@@ -1,23 +1,141 @@
 #home_page {
   .banner-section {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: $secondary-light;
-    height: calc(100vh - #{$header-desktop-height});
+    background: linear-gradient(135deg, #f8fafc 0%, #e8f4f8 50%, #f0f7fa 100%);
+    position: relative;
+    min-height: 650px;
+    padding: 100px 0;
     margin-bottom: 50px;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: 5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(
+        circle,
+        rgba(42, 92, 121, 0.12) 0%,
+        transparent 60%
+      );
+      border-radius: 50%;
+      animation: pulse-slow 8s ease-in-out infinite;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(
+        circle,
+        rgba(42, 92, 121, 0.08) 0%,
+        transparent 60%
+      );
+      border-radius: 50%;
+      animation: pulse-slow 10s ease-in-out infinite reverse;
+    }
+
+    .animated-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+
+      .shape {
+        position: absolute;
+        opacity: 0.15;
+
+        &.shape-1 {
+          top: 15%;
+          left: 10%;
+          width: 60px;
+          height: 60px;
+          border: 3px solid $primary;
+          border-radius: 50%;
+          animation: float 6s ease-in-out infinite;
+        }
+
+        &.shape-2 {
+          top: 60%;
+          left: 5%;
+          width: 40px;
+          height: 40px;
+          background: $primary;
+          border-radius: 8px;
+          animation: float 8s ease-in-out infinite reverse;
+          transform: rotate(45deg);
+        }
+
+        &.shape-3 {
+          top: 25%;
+          right: 15%;
+          width: 80px;
+          height: 80px;
+          border: 3px solid $primary;
+          border-radius: 12px;
+          animation: spin-slow 20s linear infinite;
+        }
+
+        &.shape-4 {
+          bottom: 20%;
+          right: 8%;
+          width: 50px;
+          height: 50px;
+          background: linear-gradient(
+            135deg,
+            rgba(42, 92, 121, 0.3),
+            rgba(42, 92, 121, 0.1)
+          );
+          border-radius: 50%;
+          animation: float 7s ease-in-out infinite;
+        }
+
+        &.shape-5 {
+          top: 70%;
+          left: 20%;
+          width: 30px;
+          height: 30px;
+          border: 2px solid $primary;
+          animation: float 5s ease-in-out infinite reverse;
+        }
+
+        &.shape-6 {
+          top: 10%;
+          right: 30%;
+          width: 25px;
+          height: 25px;
+          background: $primary;
+          border-radius: 50%;
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+      }
+    }
 
     .banner-content-container {
       align-items: center;
+      position: relative;
+      z-index: 1;
+      padding-left: 40px;
 
       .banner-text {
         margin-bottom: 40px;
+        padding-right: 40px;
         animation: fadeInUp 0.8s ease-out;
 
         .banner-title {
           color: $primary;
           font-weight: 700;
-          font-size: 75px;
+          font-size: 72px;
           margin-bottom: 30px;
           line-height: 1.1;
           position: relative;
@@ -342,6 +460,27 @@
   }
 }
 
+@keyframes pulse-slow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.25;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 1199.98px) {
   #home_page {
     .services-section {
@@ -356,15 +495,36 @@
 @include media-breakpoint-md {
   #home_page {
     .banner-section {
-      height: calc(100vh - #{$header-mobile-height});
+      min-height: auto;
+      padding: 60px 0 100px;
       margin-bottom: 40px;
 
+      &::before {
+        width: 300px;
+        height: 300px;
+        top: -10%;
+        right: -5%;
+      }
+
+      &::after {
+        width: 250px;
+        height: 250px;
+      }
+
+      .animated-shapes {
+        display: none;
+      }
+
       .banner-content-container {
+        padding-left: 0;
         .banner-text {
+          text-align: center;
+          margin-bottom: 30px;
+          padding-right: 0;
+
           .banner-title {
-            font-size: 42px;
-            margin-bottom: 30px;
-            text-align: center;
+            font-size: 38px;
+            margin-bottom: 25px;
 
             &::after {
               left: 50%;
@@ -373,13 +533,13 @@
             }
           }
           .banner-description {
-            font-size: 18px;
-            text-align: center;
+            font-size: 16px;
           }
         }
 
         .img-container {
           height: 280px;
+          margin-bottom: 80px;
 
           &::before {
             width: 80px;
@@ -400,25 +560,25 @@
           }
 
           .overlay {
-            padding: 20px 24px;
-            bottom: -60px;
+            padding: 18px 22px;
+            bottom: -70px;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 12px;
 
             svg {
               margin-right: 12px;
-              width: 28px;
-              height: 28px;
+              width: 26px;
+              height: 26px;
             }
 
             .overlay-text {
               span {
                 &:nth-child(1) {
-                  font-size: 20px;
+                  font-size: 18px;
                 }
                 &:nth-child(2) {
-                  font-size: 13px;
+                  font-size: 12px;
                 }
               }
             }

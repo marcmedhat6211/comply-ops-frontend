@@ -1,112 +1,242 @@
 footer {
-  background-color: $primary;
-  padding: 50px 70px 30px;
+  background: linear-gradient(135deg, $primary 0%, darken($primary, 8%) 100%);
+  padding: 60px 50px 30px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.3)
+    );
+  }
 
   .footer-paragraph {
-    color: $white;
-    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
     font-weight: 400;
+    line-height: 1.6;
   }
 
   .main-text-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
     .main-text-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      max-width: 700px;
 
       h6 {
         color: $white;
-        font-weight: 600;
-        font-size: 32px;
+        font-weight: 700;
+        font-size: 36px;
         margin-bottom: 20px;
+        line-height: 1.3;
+        text-align: center;
       }
       p {
-        color: $white;
+        color: rgba(255, 255, 255, 0.9);
         font-weight: 400;
-        font-size: 16px;
-        margin-bottom: 20px;
+        font-size: 18px;
+        margin-bottom: 30px;
+        text-align: center;
+        line-height: 1.6;
       }
     }
   }
 
-  .logo-container {
-    @include logoMixin();
-    margin-bottom: 40px;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 50px;
   }
 
-  .col-title {
-    color: $white;
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
+  .footer-logo-section {
+    flex: 1;
+    max-width: 300px;
 
-  .footer-item {
-    color: $white;
-    font-weight: 400;
-    font-size: 14px;
-
-    a {
-      color: $white;
-      text-decoration: none;
+    .logo-container {
+      @include logoMixin();
+      margin-bottom: 20px;
+      display: inline-block;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 5px;
+    .footer-description {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-columns {
+    display: flex;
+    gap: 60px;
+    flex: 2;
+    justify-content: flex-end;
+  }
+
+  .footer-column {
+    .col-title {
+      color: $white;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-item {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.8;
+      transition: all 0.3s ease-in-out;
+
+      a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        display: inline-block;
+
+        &:hover {
+          color: $white;
+          transform: translateX(3px);
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      margin: 0;
     }
   }
 }
 
 @include media-breakpoint-md {
   footer {
+    padding: 40px 20px 20px;
+
     .footer-paragraph {
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .main-text-wrapper {
       margin-bottom: 40px;
+      padding-bottom: 30px;
 
       .main-text-container {
         h6 {
-          font-size: 22px;
-          margin-bottom: 12px;
+          font-size: 24px;
+          margin-bottom: 15px;
         }
         p {
-          font-size: 14px;
-          margin-bottom: 12px;
+          font-size: 15px;
+          margin-bottom: 20px;
         }
       }
     }
 
-    .logo-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .footer-content {
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 30px;
     }
 
-    .col-title {
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
+    .footer-logo-section {
+      max-width: 100%;
+      text-align: center;
 
-    .footer-item {
-      font-size: 12px;
+      .logo-container {
+        margin-bottom: 15px;
+      }
 
-      &:not(:last-child) {
-        margin-bottom: 2px;
+      .footer-description {
+        font-size: 13px;
       }
     }
 
-    .footer-col {
-      &:not(:last-child) {
-        margin-bottom: 30px;
+    .footer-columns {
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .footer-column {
+      .col-title {
+        font-size: 16px;
+        margin-bottom: 15px;
+        text-align: center;
+
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      ul {
+        text-align: center;
+      }
+
+      .footer-item {
+        font-size: 13px;
+
+        &:not(:last-child) {
+          margin-bottom: 6px;
+        }
+      }
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+
+      p {
+        font-size: 12px;
       }
     }
   }
