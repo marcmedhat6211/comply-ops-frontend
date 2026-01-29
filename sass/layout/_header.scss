@@ -1,25 +1,56 @@
 header {
   z-index: 1000;
-  padding: 10px 20px;
+  padding: 12px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid rgba(42, 92, 121, 0.1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      $primary 0%,
+      rgba(42, 92, 121, 0.6) 50%,
+      $primary 100%
+    );
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  &.scrolled {
+    padding: 8px 40px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+  }
 
   .logo-container {
     @include logoMixin();
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   .nav-container {
     ul {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 40px;
 
       li.nav-item {
         position: relative;
@@ -28,31 +59,59 @@ header {
         a.nav-link {
           color: $dark-grey;
           font-size: 16px;
-          padding: 0;
-          transition: all 0.3s ease-in-out;
+          padding: 8px 16px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           font-weight: 500;
+          position: relative;
+          display: inline-block;
         }
 
         &::after {
           content: "";
           position: absolute;
-          top: 100%;
-          left: 0;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
           width: 0;
-          height: 1px;
-          background-color: $primary;
-          transition: all 0.3s ease-in-out;
+          height: 3px;
+          background: linear-gradient(90deg, $primary, rgba(42, 92, 121, 0.7));
+          border-radius: 2px;
+          transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          width: 100%;
+          height: 100%;
+          background: rgba(42, 92, 121, 0.08);
+          border-radius: 8px;
+          transition: transform 0.3s ease-in-out;
+          z-index: -1;
         }
 
         &:hover,
         &.active {
-          color: $primary;
           &::after {
-            width: 100%;
+            width: 80%;
+          }
+
+          &::before {
+            transform: translate(-50%, -50%) scale(1);
           }
 
           a.nav-link {
             color: $primary;
+            transform: translateY(-2px);
+          }
+        }
+
+        &.active {
+          &::after {
+            width: 80%;
           }
         }
       }
@@ -60,29 +119,89 @@ header {
   }
 
   #mobile_menu_btn_open {
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 0;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
+    border: 2px solid rgba(42, 92, 121, 0.2);
     cursor: pointer;
-    background-color: $secondary-light;
+    background: linear-gradient(
+      135deg,
+      rgba(42, 92, 121, 0.1),
+      rgba(42, 92, 121, 0.05)
+    );
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(42, 92, 121, 0.2);
+      transform: translate(-50%, -50%);
+      transition:
+        width 0.4s ease-in-out,
+        height 0.4s ease-in-out;
+    }
+
+    &:hover {
+      border-color: $primary;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(42, 92, 121, 0.2);
+
+      &::before {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
 
     svg {
-      color: $black;
-      width: 30px !important;
-      height: 30px !important;
+      color: $primary;
+      width: 28px !important;
+      height: 28px !important;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover svg {
+      transform: rotate(90deg);
     }
 
     display: none;
   }
 }
 
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @include media-breakpoint-md {
   header {
+    padding: 10px 20px;
+
+    &.scrolled {
+      padding: 8px 20px;
+    }
+
     .nav-container {
       display: none;
     }

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Comply Ops</title>
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- PRELOADER -->
+    <div class="preloader">
+      <div class="preloader-content">
+        <img
+          src="assets/images/logo-dark.png"
+          alt="Comply Ops"
+          class="preloader-logo"
+        />
+        <div class="preloader-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <div class="preloader-text">Loading</div>
+        <div class="preloader-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+    <!-- PRELOADER END -->
+    <header>
+      <a href="index.html" class="logo-container">
+        <img src="assets/images/logo-dark.png" alt="Logo" />
+      </a>
+      <div class="nav-container">
+        <ul class="m-0 p-0 list-unstyled">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Team</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <button type="button" id="mobile_menu_btn_open">
+        <i class="convert-svg" data-src="assets/icons/list.svg"></i>
+      </button>
+    </header>
+
+    <div class="main-content">
+      <div id="contact_page">
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+          <h1 class="page-title">Get In Touch</h1>
+          <p class="page-subtitle">
+            Ready to enhance your compliance operations? Contact our experts
+            today.
+          </p>
+        </section>
+        <!-- HERO SECTION END -->
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section content-pad">
+          <div class="row">
+            <!-- CONTACT FORM -->
+            <div class="col-12 col-lg-5">
+              <div class="form-card">
+                <h3 class="form-title">Send Us a Message</h3>
+                <form id="contact-form">
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          class="form-control"
+                          placeholder="John"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          class="form-control"
+                          placeholder="Smith"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="company">Company *</label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      class="form-control"
+                      placeholder="ABC Financial Services"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="john.smith@company.com"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="form-control"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="industry">Industry Type *</label>
+                    <select
+                      id="industry"
+                      name="industry"
+                      class="form-control"
+                      required
+                    >
+                      <option value="">Select your industry</option>
+                      <option value="financial">Financial Institutions</option>
+                      <option value="msb">Money Service Business</option>
+                      <option value="real-estate">Real Estate</option>
+                      <option value="crypto">Virtual Currency</option>
+                      <option value="precious">Precious Metals & Stones</option>
+                      <option value="fintech">FinTech</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label-main"
+                      >Regulatory Jurisdiction</label
+                    >
+                    <div class="checkbox-group">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-check">
+                            <input
+                              type="checkbox"
+                              id="fintrac"
+                              name="jurisdiction"
+                              value="fintrac"
+                              class="form-check-input"
+                            />
+                            <label for="fintrac" class="form-check-label"
+                              >FINTRAC (Canada)</label
+                            >
+                          </div>
+                          <div class="form-check">
+                            <input
+                              type="checkbox"
+                              id="fincen"
+                              name="jurisdiction"
+                              value="fincen"
+                              class="form-check-input"
+                            />
+                            <label for="fincen" class="form-check-label"
+                              >FINCEN (USA)</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="form-check">
+                            <input
+                              type="checkbox"
+                              id="fca"
+                              name="jurisdiction"
+                              value="fca"
+                              class="form-check-input"
+                            />
+                            <label for="fca" class="form-check-label"
+                              >FCA (UK)</label
+                            >
+                          </div>
+                          <div class="form-check">
+                            <input
+                              type="checkbox"
+                              id="eu"
+                              name="jurisdiction"
+                              value="eu"
+                              class="form-check-input"
+                            />
+                            <label for="eu" class="form-check-label"
+                              >EU Regulators</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Please describe your compliance needs and how we can help..."
+                      required
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="btn-1 w-100">
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- CONTACT INFO & FEATURES -->
+            <div class="col-12 col-lg-6 offset-lg-1">
+              <!-- CONTACT INFORMATION -->
+              <div class="info-card">
+                <h3 class="info-title">Contact Information</h3>
+                <div class="info-items">
+                  <div class="info-item">
+                    <div class="icon-wrapper">
+                      <i
+                        class="convert-svg"
+                        data-src="assets/icons/mail.svg"
+                      ></i>
+                    </div>
+                    <div class="info-content">
+                      <h5>Email</h5>
+                      <a href="mailto:info@comply-ops.com"
+                        >info@comply-ops.com</a
+                      >
+                    </div>
+                  </div>
+                  <div class="info-item">
+                    <div class="icon-wrapper">
+                      <i
+                        class="convert-svg"
+                        data-src="assets/icons/clock.svg"
+                      ></i>
+                    </div>
+                    <div class="info-content">
+                      <h5>Business Hours</h5>
+                      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                      <p class="small-text">Weekends: By appointment</p>
+                    </div>
+                  </div>
+                  <div class="info-item">
+                    <div class="icon-wrapper">
+                      <i
+                        class="convert-svg"
+                        data-src="assets/icons/map-pin.svg"
+                      ></i>
+                    </div>
+                    <div class="info-content">
+                      <h5>Service Areas</h5>
+                      <p>United Kingdom, Canada</p>
+                      <p class="small-text">United States, Europe</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WHY PARTNER WITH US -->
+              <div class="features-card">
+                <h3 class="features-title">Why Partner With Us?</h3>
+                <ul class="features-list">
+                  <li>
+                    <i
+                      class="convert-svg"
+                      data-src="assets/icons/check-circle.svg"
+                    ></i>
+                    <span>Free initial consultation and assessment</span>
+                  </li>
+                  <li>
+                    <i
+                      class="convert-svg"
+                      data-src="assets/icons/check-circle.svg"
+                    ></i>
+                    <span>Customized compliance solutions</span>
+                  </li>
+                  <li>
+                    <i
+                      class="convert-svg"
+                      data-src="assets/icons/check-circle.svg"
+                    ></i>
+                    <span>Scalable service packages</span>
+                  </li>
+                  <li>
+                    <i
+                      class="convert-svg"
+                      data-src="assets/icons/check-circle.svg"
+                    ></i>
+                    <span>24/7 support for urgent matters</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- CONSULTATION CARD -->
+              <div class="consultation-card">
+                <img
+                  src="assets/images/pages/home/hero.png"
+                  alt="Consultation"
+                  class="consultation-img"
+                />
+                <div class="consultation-content">
+                  <h4>Schedule a Consultation</h4>
+                  <p>
+                    Ready to discuss your compliance needs? Our experts are
+                    available for virtual consultations to assess your
+                    requirements and provide tailored solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CONTACT SECTION END -->
+      </div>
+    </div>
+
+    <footer>
+      <div class="main-text-wrapper">
+        <div class="main-text-container">
+          <h6 class="text-center">
+            Ready to Enhance Your Compliance Operations?
+          </h6>
+          <p class="text-center">
+            Get in touch with our experts to discuss how we can support your
+            regulatory requirements.
+          </p>
+          <a class="btn-1 light" href="contact.html">Contact Us Today</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-4 offset-lg-8">
+          <div class="logo-wrapper">
+            <a href="index.html" class="logo-container">
+              <img src="assets/images/logo-light.png" alt="Logo" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-4 d-flex footer-col">
+          <div class="footer-column">
+            <h6 class="col-title">Services</h6>
+            <ul class="list-unstyled m-0 p-0">
+              <li class="footer-item">AML Compliance</li>
+              <li class="footer-item">Fraud Detection</li>
+              <li class="footer-item">Transaction Monitoring</li>
+              <li class="footer-item">Regulatory Reporting</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 footer-col">
+          <div class="footer-column">
+            <h6 class="col-title">Contact</h6>
+            <ul class="list-unstyled m-0 p-0">
+              <li class="footer-item">
+                <a href="mailto:info@comply-ops.com">info@comply-ops.com</a>
+              </li>
+              <li class="footer-item">UK, Canada, USA, Europe</li>
+              <li class="footer-item">Mon-Fri: 9AM-5PM EST</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 footer-col">
+          <p class="footer-paragraph mb-3">
+            Professional compliance, AML, and fraud analysis services for
+            regulated entities across multiple jurisdictions.
+          </p>
+          <p class="footer-paragraph">
+            © 2025 Comply Ops LLC. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="vendors/jQuery/jQuery.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- MOBILE MENU -->
+    <div id="menu_backdrop"></div>
+    <div id="mobile_menu">
+      <div class="d-flex justify-content-end">
+        <button type="button" id="mobile_menu_btn_close">
+          <i class="convert-svg" data-src="assets/icons/x.svg"></i>
+        </button>
+      </div>
+      <div class="menu-content">
+        <a href="index.html" class="mobile-menu-logo">
+          <img src="assets/images/logo-dark.png" alt="Logo" />
+        </a>
+        <ul class="list-unstyled m-0 p-0 mobile-menu-links">
+          <li class="mobile-menu-item">
+            <a href="index.html"><span>Home</span></a>
+          </li>
+          <li class="mobile-menu-item">
+            <a href="team.html"><span>Team</span></a>
+          </li>
+          <li class="mobile-menu-item active">
+            <a href="contact.html"><span>Contact</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END MOBILE MENU -->
+  </body>
+</html>
